@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+
+<!--script id="trustedScript" text="type/javascript" src="core.js"></script-->
+
+<!--script id="trustedScript" text="type/javascript" src="attack.js"></script-->
+
+<script text="type/javascript">
+loadExternalJS("","attacker.js");
+   function redirectsPage(f){
+		return f.toString().search("document.location =") != -1;
+   }
+   if( !redirectsPage(trustedFunction) ){
+		trustedFunction();
+   }
+   else{
+		alert("Imported javascript might be trying to redirect you to other websites");
+   }
+</script>
+
+<h1>
+Safe version.
+</h1>
+
+</html>
