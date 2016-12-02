@@ -5,4 +5,4 @@ function trustedFunction(){
 	alert("hacked");
 }
 
-trustedFunction();
+//document.location = "attack.html";
